@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My First Webpage</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My First Webpage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-	<h1>I love coffee!</h1>
-	<br>
-	<p>Hello world!</p>
-	<br>
-	<img src="coffee.jfif">
+    <h1>Hello world!</h1>
+    <br>
+	<p>I love coffee!</p>
+    <br>
+    <img src="coffee.jfif" alt="Coffee Image">
+
+    <!-- Unit Converter Section wrapped in a container with border -->
+    <div class="unit-converter-container">
+        <label><h1>Unit Converter</h1></label>
+        <div class="unit-type-section">
+            <label for="unit-type">Choose Unit Type:</label>
+            <select id="unit-type" onchange="updateUnits()">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+            </select>
+        </div>
+
+        <div class="converter">
+            <div class="input-section">
+                <label for="input-value">Value</label>
+                <input type="number" id="input-value" placeholder="Enter value" oninput="convert()" />
+            </div>
+            <div class="input-section">
+                <label for="from-unit">From</label>
+                <select id="from-unit" onchange="convert()"></select>
+            </div>
+            <div class="input-section">
+                <label for="to-unit">To</label>
+                <select id="to-unit" onchange="convert()"></select>
+            </div>
+            <div class="input-section">
+                <label for="result">Result</label>
+                <div id="result" class="result-box">0.00</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript file for unit converter logic -->
+    <script src="unitConverter.js"></script>
 
 </body>
 </html>
